@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refresh Painting LLC - Professional Painting Services</title>
+    <meta name="description" content="Professional painting services for residential and commercial properties. Quality workmanship guaranteed.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        .heading-font {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://refreshpaintingllc.com/wp-content/uploads/2023/04/painting-service.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold text-blue-800 heading-font">REFRESH PAINTING LLC</a>
+            
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-gray-800 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-blue-800 font-semibold hover:text-blue-600">Home</a>
+                <a href="#services" class="text-gray-700 hover:text-blue-600">Services</a>
+                <a href="#about" class="text-gray-700 hover:text-blue-600">About Us</a>
+                <a href="#projects" class="text-gray-700 hover:text-blue-600">Projects</a>
+                <a href="#testimonials" class="text-gray-700 hover:text-blue-600">Testimonials</a>
+                <a href="#contact" class="bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-600 transition">Free Estimate</a>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white w-full px-6 pb-4">
+            <a href="#home" class="block py-2 text-gray-700 hover:text-blue-600">Home</a>
+            <a href="#services" class="block py-2 text-gray-700 hover:text-blue-600">Services</a>
+            <a href="#about" class="block py-2 text-gray-700 hover:text-blue-600">About Us</a>
+            <a href="#projects" class="block py-2 text-gray-700 hover:text-blue-600">Projects</a>
+            <a href="#testimonials" class="block py-2 text-gray-700 hover:text-blue-600">Testimonials</a>
+            <a href="#contact" class="block bg-blue-700 text-white px-4 py-2 rounded text-center mt-2 hover:bg-blue-600 transition">Free Estimate</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section pt-32 pb-20 md:pt-40 md:pb-32 text-white flex items-center">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="heading-font text-4xl md:text-6xl font-bold mb-6 animate-fade-in">Transforming Spaces with Excellence</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto animate-fade-in-up">Professional painting services for your home or business. Quality craftsmanship you can trust.</p>
+            <div class="animate-fade-in-up delay-300">
+                <a href="#contact" class="bg-blue-700 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded mr-4 transition">Get a Free Estimate</a>
+                <a href="tel:+1234567890" class="bg-transparent hover:bg-white hover:text-blue-800 text-white font-bold py-3 px-8 border-2 border-white rounded transition">
+                    <i class="fas fa-phone mr-2"></i> (123) 456-7890
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="heading-font text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Professional Services</h2>
+                <div class="w-20 h-1 bg-blue-700 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Service 1 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
+                    <img src="https://refreshpaintingllc.com/wp-content/uploads/2023/04/residential-painting.jpg" alt="Residential Painting" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="heading-font text-xl font-bold text-gray-800 mb-3">Residential Painting</h3>
+                        <p class="text-gray-600 mb-4">Transform your home with our expert interior and exterior painting services. We use only the highest quality paints and materials.</p>
+                        <a href="#" class="text-blue-700 font-semibold hover:text-blue-600 transition">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
+                    <img src="https://refreshpaintingllc.com/wp-content/uploads/2023/04/commercial-painting.jpg" alt="Commercial Painting" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="heading-font text-xl font-bold text-gray-800 mb-3">Commercial Painting</h3>
+                        <p class="text-gray-600 mb-4">Professional painting services for businesses, offices, and retail spaces. Minimal disruption to your operations.</p>
+                        <a href="#" class="text-blue-700 font-semibold hover:text-blue-600 transition">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
+                    <img src="https://refreshpaintingllc.com/wp-content/uploads/2023/04/cabinet-refinishing.jpg" alt="Cabinet Refinishing" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="heading-font text-xl font-bold text-gray-800 mb-3">Cabinet Refinishing</h3>
+                        <p class="text-gray-600 mb-4">Give your kitchen or bathroom a fresh new look without the cost of full replacement. Our refinishing services are durable and beautiful.</p>
+                        <a href="#" class="text-blue-700 font-semibold hover:text-blue-600 transition">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10">
+                    <img src="https://refreshpaintingllc.com/wp-content/uploads/2023/04/about-us.jpg" alt="About Refresh Painting LLC" class="rounded-lg shadow-xl w-full">
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="heading-font text-3xl md:text-4xl font-bold text-gray-800 mb-6">About Refresh Painting LLC</h2>
+                    <p class="text-gray-600 mb-4">Founded in 2010, Refresh Painting LLC has been providing top-quality painting services to residential and commercial clients throughout the area. Our team of skilled professionals takes pride in every project we undertake.</p>
+                    <p class="text-gray-600 mb-6">We believe in using only the highest quality materials and employing techniques that stand the test of time. Customer satisfaction is our top priority, and we won't consider a job complete until you're 100% satisfied with the results.</p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-check-circle text-blue-700 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Licensed & Insured</h4>
+                                <p class="text-gray-600 text-sm">Full coverage for your peace of mind</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-award text-blue-700 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Quality Materials</h4>
+                                <p class="text-gray-600 text-sm">We use only premium paints and supplies</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-user-tie text-blue-700 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Professional Team</h4>
+                                <p class="text-gray-600 text-sm">Experienced, skilled painters</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-calendar-check text-blue-700 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">On-Time Completion</h4>
+                                <p class="text-gray-600 text-sm">We respect your schedule</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="bg-blue-700 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded transition inline-block">Contact Us Today</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Gallery -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="heading-font text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Recent Projects</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Take a look at some of our recent work to see the quality and attention to detail we bring to every project.</p>
+                <div class="w-20 h-1 bg-blue-700 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project 1 -->
+                <div class="relative group overflow-hidden rounded-lg shadow-md">
+                    <img src="https://refreshpaintingllc.com/wp-content/uploads/2023/04/project-1.jpg" alt="Modern Home Exterior" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="text-center text-white p-4">
+                            <h3 class="heading-font text-xl font-bold mb-2">Modern Home Exterior</h3>
+                            <p class="mb-3">Complete exterior repaint with premium weather-resistant paint</p>
+                            <a href="#" class="text-white border border-white px-4 py-2 rounded hover:bg-white hover:text-blue-800 transition">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="relative group overflow-hidden rounded-lg shadow-md">
+                    <img src="https://refreshpaintingllc.com/wp-content/uploads/2023/04/project-2.jpg" alt="Office Interior" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="text-center text-white p-4">
+                            <h3 class="heading-font text-xl font-bold mb-2">Office Interior</h3>
+                            <p class="mb-3">Complete office repaint with minimal business disruption</p>
+                            <a href="#" class="text-white border border-white px-4 py-2 rounded hover:bg-white hover:text-blue-800 transition">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="relative group overflow-hidden rounded-lg shadow-md">
+                    <img src="https://refreshpaintingllc.com/wp-content/uploads/2023/04/project-3.jpg" alt="Kitchen Cabinet Refinishing" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="text-center text-white p-4">
+                            <h3 class="heading-font text-xl font-bold mb-2">Kitchen Cabinet Refinishing</h3>
+                            <p class="mb-3">Complete kitchen transformation with cabinet refinishing</p>
+                            <a href="#" class="text-white border border-white px-4 py-2 rounded hover:bg-white hover:text-blue-800 transition">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="bg-blue-700 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded transition inline-block">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="heading-font text-3xl md:text-4xl font-bold text-gray-800 mb-4">What Our Clients Say</h2>
+                <div class="w-20 h-1 bg-blue-700 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic mb-6">"Refresh Painting transformed our home with their exceptional exterior painting service. The team was professional, punctual, and paid incredible attention to detail. Our house looks brand new!"</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Sarah Johnson</h4>
+                            <p class="text-gray-600 text-sm">Homeowner</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic mb-6">"We hired Refresh Painting for our office renovation and couldn't be happier. They worked around our business hours and delivered flawless results. Highly recommend their commercial services."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Thompson" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Michael Thompson</h4>
+                            <p class="text-gray-600 text-sm">Business Owner</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic mb-6">"The cabinet refinishing service saved us thousands compared to replacement. The quality is outstanding and they completed the job faster than expected. Will definitely use them again."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Lisa Rodriguez" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Lisa Rodriguez</h4>
+                            <p class="text-gray-600 text-sm">Homeowner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-blue-800 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="heading-font text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Space?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Contact us today for a free, no-obligation estimate. Let's bring your vision to life with quality painting services.</p>
+            <a href="#contact" class="bg-white text-blue-800 hover:bg-gray-100 font-bold py-3 px-8 rounded mr-4 transition inline-block">Get Your Free Estimate</a>
+            <a href="tel:+1234567890" class="bg-transparent hover:bg-blue-700 text-white font-bold py-3 px-8 border-2 border-white rounded transition inline-block">
+                <i class="fas fa-phone mr-2"></i> (123) 456-7890
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10">
+                    <h2 class="heading-font text-3xl md:text-4xl font-bold text-gray-800 mb-6">Contact Us</h2>
+                    <p class="text-gray-600 mb-8">Fill out the form below to request a free estimate or ask any questions about our services. We typically respond within 24 hours.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-blue-700 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Our Location</h4>
+                                <p class="text-gray-600">123 Painters Lane, Cityville, ST 12345</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-blue-700 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Phone Number</h4>
+                                <p class="text-gray-600">(123) 456-7890</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-blue-700 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Email Address</h4>
+                                <p class="text-gray-600">info@refreshpaintingllc.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-clock text-blue-700 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Business Hours</h4>
+                                <p class="text-gray-600">Monday - Friday: 8:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 2:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <form class="bg-gray-50 p-8 rounded-lg shadow-md">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="service" class="block text-gray-700 font-medium mb-2">Service Interested In</label>
+                            <select id="service" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="">Select a service</option>
+                                <option value="residential">Residential Painting</option>
+                                <option value="commercial">Commercial Painting</option>
+                                <option value="cabinet">Cabinet Refinishing</option>
+                                <option value="other">Other Services</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-blue-700 hover:bg-blue-600 text-white font-bold py-3 px-4 rounded transition">Submit Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <div>
+                    <h3 class="heading-font text-xl font-bold mb-4">Refresh Painting LLC</h3>
+                    <p class="text-gray-400 mb-4">Professional painting services for residential and commercial properties. Quality workmanship guaranteed.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in text-xl"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="heading-font text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Services</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-white transition">Projects</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition">Testimonials</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="heading-font text-xl font-bold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Residential Painting</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Commercial Painting</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Cabinet Refinishing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Interior Painting</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Exterior Painting</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Color Consultation</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="heading-font text-xl font-bold mb-4">Contact Info</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-blue-600"></i>
+                            <span>123 Painters Lane, Cityville, ST 12345</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-3 text-blue-600"></i>
+                            <span>(123) 456-7890</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3 text-blue-600"></i>
+                            <span>info@refreshpaintingllc.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2023 Refresh Painting LLC. All Rights Reserved. | <a href="#" class="hover:text-white transition">Privacy Policy</a> | <a href="#" class="hover:text-white transition">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Animate elements when they come into view
+        gsap.utils.toArray('.animate-fade-in').forEach(element => {
+            gsap.from(element, {
+                opacity: 0,
+                y: 20,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            });
+        });
+        
+        gsap.utils.toArray('.animate-fade-in-up').forEach(element => {
+            gsap.from(element, {
+                opacity: 0,
+                y: 40,
+                duration: 1,
+                delay: element.classList.contains('delay-300') ? 0.3 : 0,
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            });
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg');
+                nav.classList.add('py-2');
+                nav.classList.remove('py-3');
+            } else {
+                nav.classList.remove('shadow-lg');
+                nav.classList.remove('py-2');
+                nav.classList.add('py-3');
+            }
+        });
+    </script>
+</body>
+</html>
