@@ -3,102 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Refresh Painting LLC - Professional Painting Services</title>
-    <meta name="description" content="Professional painting services for residential and commercial properties. Quality workmanship guaranteed.">
+    <title>Refresh Painting LLC | Professional Painting Services</title>
+    <meta name="description" content="Professional painting services for residential and commercial properties in Your City. Quality workmanship guaranteed.">
     
-    <!-- Tailwind CSS CDN -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a4b6e',
+                        secondary: '#e8a735',
+                        accent: '#3a7ca5',
+                        light: '#f8f9fa',
+                        dark: '#343a40'
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Custom Styles -->
     <style>
-        body {
-            font-family: 'Open Sans', sans-serif;
-        }
-        .heading-font {
-            font-family: 'Playfair Display', serif;
-        }
-        .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+        .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
         }
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
         .btn-primary {
-            background-color: #1a365d;
             transition: all 0.3s ease;
         }
         .btn-primary:hover {
-            background-color: #2c5282;
             transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-        .text-primary {
-            color: #1a365d;
-        }
-        .border-primary {
-            border-color: #1a365d;
-        }
-        .bg-primary {
-            background-color: #1a365d;
-        }
-        .bg-light {
-            background-color: #f7fafc;
+        .nav-scroll {
+            background-color: rgba(255,255,255,0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
     </style>
 </head>
-<body class="bg-white">
+<body class="font-sans text-dark">
     <!-- Navigation -->
-    <nav class="fixed w-full bg-white shadow-md z-50">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="/" class="text-2xl font-bold text-primary heading-font">REFRESH PAINTING LLC</a>
-            
-            <!-- Mobile menu button -->
-            <div class="md:hidden">
-                <button id="menu-btn" class="text-gray-800 focus:outline-none">
-                    <i class="fas fa-bars text-2xl"></i>
+    <nav class="fixed w-full z-50 transition-all duration-300 py-3">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <a href="/" class="text-2xl font-bold text-white md:text-primary font-serif">REFRESH PAINTING LLC</a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-white md:text-dark hover:text-secondary font-medium">Home</a>
+                    <a href="#services" class="text-white md:text-dark hover:text-secondary font-medium">Services</a>
+                    <a href="#about" class="text-white md:text-dark hover:text-secondary font-medium">About</a>
+                    <a href="#projects" class="text-white md:text-dark hover:text-secondary font-medium">Projects</a>
+                    <a href="#contact" class="bg-secondary text-white px-6 py-2 rounded font-medium hover:bg-opacity-90 btn-primary">Free Estimate</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button id="menu-btn" class="md:hidden text-white text-2xl focus:outline-none">
+                    <i class="fas fa-bars"></i>
                 </button>
-            </div>
-            
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex space-x-8 items-center">
-                <a href="#home" class="text-primary font-semibold">Home</a>
-                <a href="#services" class="text-gray-700 hover:text-primary">Services</a>
-                <a href="#about" class="text-gray-700 hover:text-primary">About Us</a>
-                <a href="#projects" class="text-gray-700 hover:text-primary">Projects</a>
-                <a href="#testimonials" class="text-gray-700 hover:text-primary">Testimonials</a>
-                <a href="#contact" class="btn-primary text-white px-6 py-2 rounded-md shadow">Free Estimate</a>
             </div>
         </div>
         
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white w-full px-4 pb-4 shadow-lg">
-            <a href="#home" class="block py-2 text-gray-700 hover:text-primary">Home</a>
-            <a href="#services" class="block py-2 text-gray-700 hover:text-primary">Services</a>
-            <a href="#about" class="block py-2 text-gray-700 hover:text-primary">About Us</a>
-            <a href="#projects" class="block py-2 text-gray-700 hover:text-primary">Projects</a>
-            <a href="#testimonials" class="block py-2 text-gray-700 hover:text-primary">Testimonials</a>
-            <a href="#contact" class="block btn-primary text-white px-4 py-2 rounded-md text-center mt-2 shadow">Free Estimate</a>
+        <div id="mobile-menu" class="md:hidden hidden bg-white w-full px-4 py-3 shadow-lg">
+            <a href="#home" class="block py-2 text-dark hover:text-secondary">Home</a>
+            <a href="#services" class="block py-2 text-dark hover:text-secondary">Services</a>
+            <a href="#about" class="block py-2 text-dark hover:text-secondary">About</a>
+            <a href="#projects" class="block py-2 text-dark hover:text-secondary">Projects</a>
+            <a href="#contact" class="block bg-secondary text-white px-4 py-2 rounded font-medium text-center mt-2 hover:bg-opacity-90 btn-primary">Free Estimate</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-section pt-32 pb-20 md:pt-40 md:pb-32 text-white flex items-center">
+    <section id="home" class="hero-image pt-32 pb-24 md:pt-40 text-white">
         <div class="container mx-auto px-4 text-center">
-            <h1 class="heading-font text-4xl md:text-5xl font-bold mb-6">Professional Painting Services</h1>
-            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Quality craftsmanship for your residential or commercial property. Serving the area since 2010.</p>
-            <div>
-                <a href="#contact" class="btn-primary text-white font-bold py-3 px-8 rounded-md mr-4 shadow inline-block mb-4 md:mb-0">Get a Free Estimate</a>
-                <a href="tel:+1234567890" class="bg-transparent hover:bg-white hover:text-primary text-white font-bold py-3 px-8 border-2 border-white rounded-md inline-block">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 font-serif">Quality Painting Services</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Professional painting for your home or business. Serving Your City and surrounding areas.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-secondary hover:bg-opacity-90 text-white font-medium py-3 px-8 rounded btn-primary">Get a Free Estimate</a>
+                <a href="tel:+1234567890" class="bg-transparent border-2 border-white hover:bg-white hover:text-primary text-white font-medium py-3 px-8 rounded btn-primary">
                     <i class="fas fa-phone mr-2"></i> (123) 456-7890
                 </a>
             </div>
@@ -109,53 +110,53 @@
     <section id="services" class="py-16 bg-light">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="heading-font text-3xl md:text-4xl font-bold text-primary mb-4">Our Services</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">We offer a wide range of professional painting services for both residential and commercial properties.</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 font-serif">Our Services</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Service 1 -->
                 <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
-                    <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Residential Painting" class="w-full h-64 object-cover">
+                    <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Residential Painting" class="w-full h-56 object-cover">
                     <div class="p-6">
-                        <h3 class="heading-font text-xl font-bold text-gray-800 mb-3">Residential Painting</h3>
-                        <p class="text-gray-600 mb-4">Transform your home with our expert interior and exterior painting services.</p>
-                        <a href="#" class="text-primary font-semibold hover:text-primary-dark">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                        <h3 class="text-xl font-bold mb-3 font-serif">Residential Painting</h3>
+                        <p class="text-gray-600 mb-4">Transform your home with our expert interior and exterior painting services using premium quality paints.</p>
+                        <a href="#" class="text-primary font-medium hover:text-secondary">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
                     </div>
                 </div>
                 
                 <!-- Service 2 -->
                 <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
-                    <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Commercial Painting" class="w-full h-64 object-cover">
+                    <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Commercial Painting" class="w-full h-56 object-cover">
                     <div class="p-6">
-                        <h3 class="heading-font text-xl font-bold text-gray-800 mb-3">Commercial Painting</h3>
-                        <p class="text-gray-600 mb-4">Professional painting services for businesses with minimal disruption.</p>
-                        <a href="#" class="text-primary font-semibold hover:text-primary-dark">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                        <h3 class="text-xl font-bold mb-3 font-serif">Commercial Painting</h3>
+                        <p class="text-gray-600 mb-4">Professional painting services for businesses, offices, and retail spaces with minimal disruption.</p>
+                        <a href="#" class="text-primary font-medium hover:text-secondary">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
                     </div>
                 </div>
                 
                 <!-- Service 3 -->
                 <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300">
-                    <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2086&q=80" alt="Cabinet Refinishing" class="w-full h-64 object-cover">
+                    <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2086&q=80" alt="Cabinet Refinishing" class="w-full h-56 object-cover">
                     <div class="p-6">
-                        <h3 class="heading-font text-xl font-bold text-gray-800 mb-3">Cabinet Refinishing</h3>
-                        <p class="text-gray-600 mb-4">Give your kitchen or bathroom a fresh new look without replacement costs.</p>
-                        <a href="#" class="text-primary font-semibold hover:text-primary-dark">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                        <h3 class="text-xl font-bold mb-3 font-serif">Cabinet Refinishing</h3>
+                        <p class="text-gray-600 mb-4">Give your kitchen or bathroom a fresh new look without the cost of full cabinet replacement.</p>
+                        <a href="#" class="text-primary font-medium hover:text-secondary">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Us Section -->
+    <!-- About Section -->
     <section id="about" class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <div class="flex flex-col lg:flex-row items-center">
                 <div class="lg:w-1/2 mb-8 lg:mb-0 lg:pr-8">
-                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="About Refresh Painting LLC" class="rounded-lg shadow-md w-full">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="About Our Team" class="rounded-lg shadow-md w-full">
                 </div>
                 <div class="lg:w-1/2">
-                    <h2 class="heading-font text-3xl md:text-4xl font-bold text-primary mb-6">About Refresh Painting LLC</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 font-serif">About Refresh Painting LLC</h2>
                     <p class="text-gray-600 mb-4">Founded in 2010, Refresh Painting LLC has been providing top-quality painting services to residential and commercial clients throughout the area. Our team of skilled professionals takes pride in every project we undertake.</p>
                     <p class="text-gray-600 mb-6">We believe in using only the highest quality materials and employing techniques that stand the test of time. Customer satisfaction is our top priority, and we won't consider a job complete until you're 100% satisfied with the results.</p>
                     
@@ -165,8 +166,8 @@
                                 <i class="fas fa-check-circle text-primary"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-gray-800 mb-1">Licensed & Insured</h4>
-                                <p class="text-gray-600 text-sm">Full coverage for your peace of mind</p>
+                                <h4 class="font-bold text-dark mb-1">Licensed & Insured</h4>
+                                <p class="text-gray-600 text-sm">Professional and protected</p>
                             </div>
                         </div>
                         <div class="flex items-start">
@@ -174,7 +175,7 @@
                                 <i class="fas fa-award text-primary"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-gray-800 mb-1">Quality Materials</h4>
+                                <h4 class="font-bold text-dark mb-1">Quality Materials</h4>
                                 <p class="text-gray-600 text-sm">Premium paints and supplies</p>
                             </div>
                         </div>
@@ -183,8 +184,8 @@
                                 <i class="fas fa-user-tie text-primary"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-gray-800 mb-1">Professional Team</h4>
-                                <p class="text-gray-600 text-sm">Experienced, skilled painters</p>
+                                <h4 class="font-bold text-dark mb-1">Experienced Team</h4>
+                                <p class="text-gray-600 text-sm">Skilled professionals</p>
                             </div>
                         </div>
                         <div class="flex items-start">
@@ -192,24 +193,24 @@
                                 <i class="fas fa-calendar-check text-primary"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-gray-800 mb-1">On-Time Completion</h4>
+                                <h4 class="font-bold text-dark mb-1">On-Time Completion</h4>
                                 <p class="text-gray-600 text-sm">We respect your schedule</p>
                             </div>
                         </div>
                     </div>
                     
-                    <a href="#contact" class="btn-primary text-white font-bold py-3 px-8 rounded-md shadow inline-block">Contact Us Today</a>
+                    <a href="#contact" class="bg-secondary hover:bg-opacity-90 text-white font-medium py-3 px-8 rounded btn-primary inline-block">Contact Us Today</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Gallery -->
+    <!-- Projects Section -->
     <section id="projects" class="py-16 bg-light">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="heading-font text-3xl md:text-4xl font-bold text-primary mb-4">Our Projects</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Take a look at some of our recent work to see the quality we bring to every project.</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 font-serif">Our Recent Projects</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
             </div>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -218,9 +219,9 @@
                     <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Modern Home Exterior" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <div class="text-center text-white p-4">
-                            <h3 class="heading-font text-xl font-bold mb-2">Modern Home Exterior</h3>
-                            <p class="mb-3">Complete exterior repaint</p>
-                            <a href="#" class="text-white border border-white px-4 py-2 rounded-md hover:bg-white hover:text-primary">View Details</a>
+                            <h3 class="text-xl font-bold mb-2 font-serif">Modern Home Exterior</h3>
+                            <p class="mb-3">Complete exterior transformation</p>
+                            <a href="#" class="text-white border border-white px-4 py-2 rounded hover:bg-white hover:text-primary">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -230,9 +231,9 @@
                     <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Office Interior" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <div class="text-center text-white p-4">
-                            <h3 class="heading-font text-xl font-bold mb-2">Office Interior</h3>
-                            <p class="mb-3">Complete office repaint</p>
-                            <a href="#" class="text-white border border-white px-4 py-2 rounded-md hover:bg-white hover:text-primary">View Details</a>
+                            <h3 class="text-xl font-bold mb-2 font-serif">Office Interior</h3>
+                            <p class="mb-3">Professional workspace refresh</p>
+                            <a href="#" class="text-white border border-white px-4 py-2 rounded hover:bg-white hover:text-primary">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -242,31 +243,31 @@
                     <img src="https://images.unsplash.com/photo-1556910638-9a2cc2841af4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Kitchen Cabinet Refinishing" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <div class="text-center text-white p-4">
-                            <h3 class="heading-font text-xl font-bold mb-2">Kitchen Cabinet Refinishing</h3>
-                            <p class="mb-3">Complete kitchen transformation</p>
-                            <a href="#" class="text-white border border-white px-4 py-2 rounded-md hover:bg-white hover:text-primary">View Details</a>
+                            <h3 class="text-xl font-bold mb-2 font-serif">Kitchen Transformation</h3>
+                            <p class="mb-3">Cabinet refinishing project</p>
+                            <a href="#" class="text-white border border-white px-4 py-2 rounded hover:bg-white hover:text-primary">View Details</a>
                         </div>
                     </div>
                 </div>
             </div>
             
             <div class="text-center mt-12">
-                <a href="#" class="btn-primary text-white font-bold py-3 px-8 rounded-md shadow inline-block">View All Projects</a>
+                <a href="#" class="bg-secondary hover:bg-opacity-90 text-white font-medium py-3 px-8 rounded btn-primary inline-block">View All Projects</a>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section id="testimonials" class="py-16 bg-white">
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-primary text-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="heading-font text-3xl md:text-4xl font-bold text-primary mb-4">Client Testimonials</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">What our clients say about our work</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 font-serif">What Our Clients Say</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Testimonial 1 -->
-                <div class="bg-light p-6 rounded-lg shadow-md">
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur-sm">
                     <div class="flex items-center mb-4">
                         <div class="text-yellow-400 mr-2">
                             <i class="fas fa-star"></i>
@@ -276,18 +277,18 @@
                             <i class="fas fa-star"></i>
                         </div>
                     </div>
-                    <p class="text-gray-700 italic mb-6">"Refresh Painting transformed our home with their exceptional exterior painting service. The team was professional and paid incredible attention to detail."</p>
+                    <p class="italic mb-6">"Refresh Painting did an amazing job on our home exterior. The team was professional, punctual, and the quality of work exceeded our expectations."</p>
                     <div class="flex items-center">
-                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson" class="w-12 h-12 rounded-full mr-4">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah J." class="w-12 h-12 rounded-full mr-4">
                         <div>
-                            <h4 class="font-bold text-gray-800">Sarah Johnson</h4>
-                            <p class="text-gray-600 text-sm">Homeowner</p>
+                            <h4 class="font-bold">Sarah Johnson</h4>
+                            <p class="text-sm text-white text-opacity-80">Homeowner</p>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Testimonial 2 -->
-                <div class="bg-light p-6 rounded-lg shadow-md">
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur-sm">
                     <div class="flex items-center mb-4">
                         <div class="text-yellow-400 mr-2">
                             <i class="fas fa-star"></i>
@@ -297,18 +298,18 @@
                             <i class="fas fa-star"></i>
                         </div>
                     </div>
-                    <p class="text-gray-700 italic mb-6">"We hired Refresh Painting for our office renovation and couldn't be happier. They worked around our business hours and delivered flawless results."</p>
+                    <p class="italic mb-6">"We hired Refresh Painting for our office renovation and couldn't be happier. They worked around our business hours and delivered flawless results."</p>
                     <div class="flex items-center">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Thompson" class="w-12 h-12 rounded-full mr-4">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T." class="w-12 h-12 rounded-full mr-4">
                         <div>
-                            <h4 class="font-bold text-gray-800">Michael Thompson</h4>
-                            <p class="text-gray-600 text-sm">Business Owner</p>
+                            <h4 class="font-bold">Michael Thompson</h4>
+                            <p class="text-sm text-white text-opacity-80">Business Owner</p>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Testimonial 3 -->
-                <div class="bg-light p-6 rounded-lg shadow-md">
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur-sm">
                     <div class="flex items-center mb-4">
                         <div class="text-yellow-400 mr-2">
                             <i class="fas fa-star"></i>
@@ -318,12 +319,12 @@
                             <i class="fas fa-star"></i>
                         </div>
                     </div>
-                    <p class="text-gray-700 italic mb-6">"The cabinet refinishing service saved us thousands compared to replacement. The quality is outstanding and they completed the job quickly."</p>
+                    <p class="italic mb-6">"The cabinet refinishing service saved us thousands compared to replacement. The quality is outstanding and they completed the job quickly."</p>
                     <div class="flex items-center">
-                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Lisa Rodriguez" class="w-12 h-12 rounded-full mr-4">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Lisa R." class="w-12 h-12 rounded-full mr-4">
                         <div>
-                            <h4 class="font-bold text-gray-800">Lisa Rodriguez</h4>
-                            <p class="text-gray-600 text-sm">Homeowner</p>
+                            <h4 class="font-bold">Lisa Rodriguez</h4>
+                            <p class="text-sm text-white text-opacity-80">Homeowner</p>
                         </div>
                     </div>
                 </div>
@@ -332,13 +333,13 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-16 bg-primary text-white">
+    <section class="py-16 bg-secondary text-white">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="heading-font text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Space?</h2>
-            <p class="text-xl mb-8 max-w-2xl mx-auto">Contact us today for a free, no-obligation estimate.</p>
-            <div>
-                <a href="#contact" class="bg-white text-primary hover:bg-gray-100 font-bold py-3 px-8 rounded-md shadow mr-4 inline-block mb-4 md:mb-0">Get Your Free Estimate</a>
-                <a href="tel:+1234567890" class="bg-transparent hover:bg-white hover:text-primary text-white font-bold py-3 px-8 border-2 border-white rounded-md inline-block">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 font-serif">Ready to Refresh Your Space?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Contact us today for a free, no-obligation estimate on your next painting project.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-white text-primary hover:bg-opacity-90 font-medium py-3 px-8 rounded btn-primary">Get Your Free Estimate</a>
+                <a href="tel:+1234567890" class="bg-transparent border-2 border-white hover:bg-white hover:text-primary text-white font-medium py-3 px-8 rounded btn-primary">
                     <i class="fas fa-phone mr-2"></i> (123) 456-7890
                 </a>
             </div>
@@ -350,8 +351,8 @@
         <div class="container mx-auto px-4">
             <div class="flex flex-col lg:flex-row">
                 <div class="lg:w-1/2 mb-8 lg:mb-0 lg:pr-8">
-                    <h2 class="heading-font text-3xl md:text-4xl font-bold text-primary mb-6">Contact Us</h2>
-                    <p class="text-gray-600 mb-8">Fill out the form to request a free estimate or ask questions about our services.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 font-serif">Contact Us</h2>
+                    <p class="text-gray-600 mb-8">Fill out the form to request a free estimate or ask questions about our services. We typically respond within 24 hours.</p>
                     
                     <div class="space-y-4">
                         <div class="flex items-start">
@@ -359,8 +360,8 @@
                                 <i class="fas fa-map-marker-alt text-primary"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-gray-800 mb-1">Our Location</h4>
-                                <p class="text-gray-600">123 Painters Lane, Cityville, ST 12345</p>
+                                <h4 class="font-bold text-dark mb-1">Our Location</h4>
+                                <p class="text-gray-600">123 Painters Lane, Your City, ST 12345</p>
                             </div>
                         </div>
                         
@@ -369,7 +370,7 @@
                                 <i class="fas fa-phone-alt text-primary"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-gray-800 mb-1">Phone Number</h4>
+                                <h4 class="font-bold text-dark mb-1">Phone Number</h4>
                                 <p class="text-gray-600">(123) 456-7890</p>
                             </div>
                         </div>
@@ -379,7 +380,7 @@
                                 <i class="fas fa-envelope text-primary"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-gray-800 mb-1">Email Address</h4>
+                                <h4 class="font-bold text-dark mb-1">Email Address</h4>
                                 <p class="text-gray-600">info@refreshpaintingllc.com</p>
                             </div>
                         </div>
@@ -389,8 +390,8 @@
                                 <i class="fas fa-clock text-primary"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-gray-800 mb-1">Business Hours</h4>
-                                <p class="text-gray-600">Monday-Friday: 8AM-6PM<br>Saturday: 9AM-2PM</p>
+                                <h4 class="font-bold text-dark mb-1">Business Hours</h4>
+                                <p class="text-gray-600">Monday-Friday: 8:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 2:00 PM</p>
                             </div>
                         </div>
                     </div>
@@ -400,22 +401,22 @@
                     <form class="bg-light p-6 rounded-lg shadow-md">
                         <div class="mb-4">
                             <label for="name" class="block text-gray-700 font-medium mb-2">Your Name *</label>
-                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
                         </div>
                         
                         <div class="mb-4">
                             <label for="email" class="block text-gray-700 font-medium mb-2">Email Address *</label>
-                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
                         </div>
                         
                         <div class="mb-4">
                             <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
-                            <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
                         </div>
                         
                         <div class="mb-4">
                             <label for="service" class="block text-gray-700 font-medium mb-2">Service Interested In *</label>
-                            <select id="service" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                            <select id="service" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
                                 <option value="">Select a service</option>
                                 <option value="residential">Residential Painting</option>
                                 <option value="commercial">Commercial Painting</option>
@@ -426,10 +427,10 @@
                         
                         <div class="mb-4">
                             <label for="message" class="block text-gray-700 font-medium mb-2">Message *</label>
-                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required></textarea>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required></textarea>
                         </div>
                         
-                        <button type="submit" class="w-full btn-primary text-white font-bold py-3 px-4 rounded-md shadow">Submit Request</button>
+                        <button type="submit" class="w-full bg-secondary hover:bg-opacity-90 text-white font-medium py-3 px-4 rounded btn-primary">Submit Request</button>
                     </form>
                 </div>
             </div>
@@ -437,34 +438,32 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="bg-dark text-white py-12">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                    <h3 class="heading-font text-xl font-bold mb-4">Refresh Painting LLC</h3>
-                    <p class="text-gray-400 mb-4">Professional painting services for residential and commercial properties.</p>
+                    <h3 class="text-xl font-bold mb-4 font-serif">Refresh Painting LLC</h3>
+                    <p class="text-gray-400 mb-4">Professional painting services for residential and commercial properties in Your City and surrounding areas.</p>
                     <div class="flex space-x-4">
                         <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
                         <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 
                 <div>
-                    <h3 class="heading-font text-xl font-bold mb-4">Quick Links</h3>
+                    <h3 class="text-xl font-bold mb-4 font-serif">Quick Links</h3>
                     <ul class="space-y-2">
                         <li><a href="#home" class="text-gray-400 hover:text-white">Home</a></li>
                         <li><a href="#services" class="text-gray-400 hover:text-white">Services</a></li>
                         <li><a href="#about" class="text-gray-400 hover:text-white">About Us</a></li>
                         <li><a href="#projects" class="text-gray-400 hover:text-white">Projects</a></li>
-                        <li><a href="#testimonials" class="text-gray-400 hover:text-white">Testimonials</a></li>
                         <li><a href="#contact" class="text-gray-400 hover:text-white">Contact</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h3 class="heading-font text-xl font-bold mb-4">Services</h3>
+                    <h3 class="text-xl font-bold mb-4 font-serif">Services</h3>
                     <ul class="space-y-2">
                         <li><a href="#" class="text-gray-400 hover:text-white">Residential Painting</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white">Commercial Painting</a></li>
@@ -475,18 +474,18 @@
                 </div>
                 
                 <div>
-                    <h3 class="heading-font text-xl font-bold mb-4">Contact Info</h3>
+                    <h3 class="text-xl font-bold mb-4 font-serif">Contact Info</h3>
                     <ul class="space-y-2 text-gray-400">
                         <li class="flex items-start">
-                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-primary"></i>
-                            <span>123 Painters Lane, Cityville, ST 12345</span>
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-secondary"></i>
+                            <span>123 Painters Lane, Your City, ST 12345</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-phone-alt mt-1 mr-3 text-primary"></i>
+                            <i class="fas fa-phone-alt mt-1 mr-3 text-secondary"></i>
                             <span>(123) 456-7890</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-envelope mt-1 mr-3 text-primary"></i>
+                            <i class="fas fa-envelope mt-1 mr-3 text-secondary"></i>
                             <span>info@refreshpaintingllc.com</span>
                         </li>
                     </ul>
@@ -530,6 +529,20 @@
                     }
                 }
             });
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('nav-scroll');
+                nav.classList.remove('py-3');
+                nav.classList.add('py-2');
+            } else {
+                nav.classList.remove('nav-scroll');
+                nav.classList.remove('py-2');
+                nav.classList.add('py-3');
+            }
         });
     </script>
 </body>
