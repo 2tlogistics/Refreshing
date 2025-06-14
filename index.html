@@ -129,8 +129,8 @@
             color: #1a4b6e;
             font-size: 28px;
         }
-        #services-section {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1593692909680-61e48a52aec0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+        #services {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1593692909680-61e48a52aec0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
             background-attachment: fixed;
             background-position: center;
             background-size: cover;
@@ -185,86 +185,85 @@
         </div>
     </section>
 
-    <!-- Services Section - With Parallax Background -->
-    <section id="services" class="py-16" id="services-section">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 font-serif text-white" data-aos="fade-up">Our Professional Services</h2>
-                <p class="text-lg text-gray-200 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Whether you need a fresh coat of paint, expert repairs, or surface restoration, we deliver flawless results.</p>
-                <div class="w-20 h-1 bg-secondary mx-auto mt-4" data-aos="fade-up" data-aos-delay="150"></div>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Residential Painting" class="service-img">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 font-serif">Residential Painting</h3>
-                        <p class="text-gray-600 mb-4">Transform your home with our expert interior and exterior painting services using premium quality paints.</p>
-                        <div class="flex justify-between items-center">
-                            <a href="#" class="text-primary font-medium hover:text-secondary">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
-                            <span class="text-sm bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full">Popular</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Service 2 -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="250">
-                    <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Commercial Painting" class="service-img">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 font-serif">Commercial Painting</h3>
-                        <p class="text-gray-600 mb-4">Professional painting services for businesses, offices, and retail spaces with minimal disruption.</p>
+<!-- Services Section - Fixed with Dark Background -->
+<section id="services" class="py-16 parallax">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 font-serif text-white" data-aos="fade-up">Our Professional Services</h2>
+            <p class="text-lg text-gray-200 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Whether you need a fresh coat of paint, expert repairs, or surface restoration, we deliver flawless results.</p>
+            <div class="w-20 h-1 bg-secondary mx-auto mt-4" data-aos="fade-up" data-aos-delay="150"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Service 1 -->
+            <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Residential Painting" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-3 font-serif text-dark">Residential Painting</h3>
+                    <p class="text-gray-600 mb-4">Transform your home with our expert interior and exterior painting services using premium quality paints.</p>
+                    <div class="flex justify-between items-center">
                         <a href="#" class="text-primary font-medium hover:text-secondary">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
-                    </div>
-                </div>
-                
-                <!-- Service 3 -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                    <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2086&q=80" alt="Interior Painting" class="service-img">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 font-serif">Interior Painting</h3>
-                        <p class="text-gray-600 mb-4">Refresh your living spaces with our professional interior painting services for walls, ceilings, and trim.</p>
-                        <a href="#" class="text-primary font-medium hover:text-secondary">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
-                    </div>
-                </div>
-                
-                <!-- Service 4 -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="350">
-                    <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Exterior Painting" class="service-img">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 font-serif">Exterior Painting</h3>
-                        <p class="text-gray-600 mb-4">Protect and beautify your home's exterior with our weather-resistant painting solutions.</p>
-                        <a href="#" class="text-primary font-medium hover:text-secondary">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
-                    </div>
-                </div>
-                
-                <!-- Service 5 -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
-                    <img src="https://images.unsplash.com/photo-1556910638-9a2cc2841af4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Stucco Repair" class="service-img">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 font-serif">Stucco Repair</h3>
-                        <p class="text-gray-600 mb-4">Professional stucco repair and refinishing to restore your home's exterior beauty.</p>
-                        <a href="#" class="text-primary font-medium hover:text-secondary">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
-                    </div>
-                </div>
-                
-                <!-- Service 6 -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="450">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Drywall Repair" class="service-img">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 font-serif">Drywall Repair</h3>
-                        <p class="text-gray-600 mb-4">Expert drywall repair and finishing for seamless walls and ceilings.</p>
-                        <a href="#" class="text-primary font-medium hover:text-secondary">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                        <span class="text-sm bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full">Popular</span>
                     </div>
                 </div>
             </div>
             
-            <div class="text-center mt-12" data-aos="fade-up">
-                <a href="#" class="bg-secondary hover:bg-opacity-90 text-white font-medium py-3 px-8 rounded btn-primary inline-block">Explore All Services</a>
+            <!-- Service 2 -->
+            <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="250">
+                <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Commercial Painting" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-3 font-serif text-dark">Commercial Painting</h3>
+                    <p class="text-gray-600 mb-4">Professional painting services for businesses, offices, and retail spaces with minimal disruption.</p>
+                    <a href="#" class="text-primary font-medium hover:text-secondary">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                </div>
+            </div>
+            
+            <!-- Service 3 -->
+            <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+                <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2086&q=80" alt="Interior Painting" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-3 font-serif text-dark">Interior Painting</h3>
+                    <p class="text-gray-600 mb-4">Refresh your living spaces with our professional interior painting services for walls, ceilings, and trim.</p>
+                    <a href="#" class="text-primary font-medium hover:text-secondary">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                </div>
+            </div>
+            
+            <!-- Service 4 -->
+            <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="350">
+                <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Exterior Painting" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-3 font-serif text-dark">Exterior Painting</h3>
+                    <p class="text-gray-600 mb-4">Protect and beautify your home's exterior with our weather-resistant painting solutions.</p>
+                    <a href="#" class="text-primary font-medium hover:text-secondary">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                </div>
+            </div>
+            
+            <!-- Service 5 -->
+            <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="400">
+                <img src="https://images.unsplash.com/photo-1556910638-9a2cc2841af4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Stucco Repair" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-3 font-serif text-dark">Stucco Repair</h3>
+                    <p class="text-gray-600 mb-4">Professional stucco repair and refinishing to restore your home's exterior beauty.</p>
+                    <a href="#" class="text-primary font-medium hover:text-secondary">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                </div>
+            </div>
+            
+            <!-- Service 6 -->
+            <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="450">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Drywall Repair" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-3 font-serif text-dark">Drywall Repair</h3>
+                    <p class="text-gray-600 mb-4">Expert drywall repair and finishing for seamless walls and ceilings.</p>
+                    <a href="#" class="text-primary font-medium hover:text-secondary">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                </div>
             </div>
         </div>
-    </section>
-
+        
+        <div class="text-center mt-12" data-aos="fade-up">
+            <a href="#" class="bg-secondary hover:bg-opacity-90 text-white font-medium py-3 px-8 rounded btn-primary inline-block">Explore All Services</a>
+        </div>
+    </div>
+</section>
     <!-- About Section -->
     <section id="about" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
