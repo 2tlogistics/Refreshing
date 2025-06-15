@@ -6,7 +6,6 @@
     <title>Refresh Painting LLC | Professional Painting Services in Houston</title>
     <meta name="description" content="Professional residential and commercial painting services in Houston and surrounding areas. Quality workmanship with 3-year warranty.">
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -28,25 +27,24 @@
         }
     </script>
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
+        /* Estilos generales y de secciones (mantener Tailwind como base) */
         .hero-image {
             background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
-        .service-card {
+        
+        .service-card { /* Esta clase es para las tarjetas de la sección "Our Professional Services" */
             background: white;
             border-radius: 10px;
             overflow: hidden;
@@ -69,11 +67,12 @@
             background-color: rgba(255,255,255,0.95);
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
+        /* La clase .parallax general se mantiene, pero la sección de Service Areas tendrá su propia implementación de fondo fijo */
         .parallax {
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
-            background-size: cover;
+            background-size: cover; 
         }
         .features-grid {
             display: grid;
@@ -85,17 +84,6 @@
             backdrop-filter: blur(10px);
             border-radius: 10px;
             padding: 30px;
-        }
-        .service-area-card {
-            background: rgba(255,255,255,0.9);
-            transition: all 0.3s ease;
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        .service-area-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
         .service-img {
             height: 250px;
@@ -129,23 +117,210 @@
             color: #1a4b6e;
             font-size: 28px;
         }
-        #services {
+        #services { /* Esta es la sección de "Our Professional Services" */
             background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1593692909680-61e48a52aec0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
             background-attachment: fixed;
             background-position: center;
             background-size: cover;
             color: white;
         }
+
+        /* ========================================================= */
+        /* === ESTILOS NATIVOS Y ANIMACIONES PARA SERVICE AREAS === */
+        /* ========================================================= */
+
+        .service-areas-section {
+            padding: 4rem 0; /* py-16 */
+            background-color: #f3f4f6; /* bg-gray-100 */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('camioneta.png');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed; /* Parallax effect */
+            position: relative; /* Necesario para z-index si hay elementos superpuestos */
+            overflow: hidden; /* Para contener los elementos flotantes */
+        }
+
+        .service-areas-section-content {
+            max-width: 1200px; /* container */
+            margin-left: auto;
+            margin-right: auto; /* mx-auto */
+            padding-left: 1rem; /* px-4 */
+            padding-right: 1rem; /* px-4 */
+            position: relative;
+            z-index: 20; /* Para que el contenido esté por encima del overlay de la imagen */
+        }
+        
+        .service-areas-header {
+            text-align: center; /* text-center */
+            margin-bottom: 3rem; /* mb-12 */
+        }
+
+        .service-areas-header h2 {
+            font-size: 2rem; /* text-3xl */
+            font-weight: bold; /* font-bold */
+            margin-bottom: 1rem; /* mb-4 */
+            font-family: 'Playfair Display', serif; /* font-serif */
+            color: white; /* text-white */
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .service-areas-header h2.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (min-width: 768px) { /* md:text-4xl */
+            .service-areas-header h2 {
+                font-size: 2.25rem;
+            }
+        }
+
+        .service-areas-header p {
+            font-size: 1.125rem; /* text-lg */
+            color: white; /* text-white */
+            max-width: 42rem; /* max-w-2xl */
+            margin-left: auto;
+            margin-right: auto; /* mx-auto */
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .service-areas-header p.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .service-areas-header p.is-visible { transition-delay: 0.1s; } /* Slight delay */
+
+        .service-areas-divider {
+            width: 5rem; /* w-20 */
+            height: 0.25rem; /* h-1 */
+            background-color: #e8a735; /* bg-secondary */
+            margin-left: auto;
+            margin-right: auto; /* mx-auto */
+            margin-top: 1rem; /* mt-4 */
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .service-areas-divider.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.2s; /* Slight delay */
+        }
+        
+        .service-areas-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* grid-cols-1 */
+            gap: 1.5rem; /* gap-6 */
+        }
+
+        @media (min-width: 768px) { /* md:grid-cols-2 */
+            .service-areas-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) { /* lg:grid-cols-4 */
+            .service-areas-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .service-area-card {
+            background: white; /* Asegura un fondo blanco para las cards */
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4); /* Sombra más pronunciada para que destaquen */
+            transition: all 0.3s ease; /* Hover transition */
+            padding: 25px; /* Espaciado interno */
+            position: relative;
+            z-index: 10;
+            /* Animation properties */
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .service-area-card.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Specific delays for cards (handled in JS now, but can be done with CSS if preferred for fixed order) */
+        .service-area-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+        }
+        
+        .service-area-card h3 {
+            font-size: 1.25rem; /* text-xl */
+            font-weight: bold; /* font-bold */
+            margin-bottom: 0.75rem; /* mb-3 */
+            font-family: 'Playfair Display', serif; /* font-serif */
+            color: #1a4b6e; /* primary */
+        }
+        
+        .service-area-card ul {
+            list-style: none; /* remove default bullet points */
+            padding: 0;
+            margin: 0;
+            /* space-y-2 conversion */
+        }
+        .service-area-card ul li {
+            color: #343a40; /* dark */
+            margin-bottom: 0.5rem; /* space-y-2 */
+            display: flex; /* flex */
+            align-items: center; /* items-center */
+        }
+        .service-area-card ul li:last-child {
+            margin-bottom: 0;
+        }
+
+        .service-area-card ul li i {
+            color: #e8a735; /* secondary */
+            margin-right: 0.5rem; /* mr-2 */
+        }
+
+        .service-areas-cta {
+            text-align: center; /* text-center */
+            margin-top: 3rem; /* mt-12 */
+        }
+        .service-areas-cta p {
+            color: white; /* text-white */
+            margin-bottom: 1rem; /* mb-4 */
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .service-areas-cta p.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.3s; /* Slight delay */
+        }
+
+        /* Estilos del botón CTA (se mantienen las clases de Tailwind y btn-primary ya definidas) */
+        /* Las clases Tailwind para el botón son suficientemente robustas */
+        /* bg-secondary hover:bg-opacity-90 text-white font-medium py-3 px-8 rounded btn-primary inline-block */
+
+        /* Animation class for JS-triggered animations */
+        .js-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .js-fade-in.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
     </style>
 </head>
 <body class="font-sans text-dark bg-gray-50">
-    <!-- Navigation -->
     <nav class="fixed w-full z-50 transition-all duration-300 py-3">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center">
                 <a href="/" class="text-2xl font-bold text-white md:text-primary font-serif">REFRESH PAINTING LLC</a>
                 
-                <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#home" class="text-white md:text-dark hover:text-secondary font-medium">Home</a>
                     <a href="#services" class="text-white md:text-dark hover:text-secondary font-medium">Services</a>
@@ -154,14 +329,12 @@
                     <a href="#contact" class="bg-secondary text-white px-6 py-2 rounded font-medium hover:bg-opacity-90 btn-primary">Free Estimate</a>
                 </div>
                 
-                <!-- Mobile menu button -->
                 <button id="menu-btn" class="md:hidden text-white text-2xl focus:outline-none">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
         </div>
         
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="md:hidden hidden bg-white w-full px-4 py-3 shadow-lg">
             <a href="#home" class="block py-2 text-dark hover:text-secondary">Home</a>
             <a href="#services" class="block py-2 text-dark hover:text-secondary">Services</a>
@@ -171,21 +344,19 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home" class="hero-image pt-32 pb-24 md:pt-40 text-white">
         <div class="container mx-auto px-4 text-center">
             <h1 class="text-4xl md:text-5xl font-bold mb-6 font-serif" data-aos="fade-down">Professional Painting Services in Houston</h1>
             <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" data-aos="fade-down" data-aos-delay="100">Transforming homes and businesses with premium painting services across the Houston area.</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
                 <a href="#contact" class="bg-secondary hover:bg-opacity-90 text-white font-medium py-3 px-8 rounded btn-primary">Get a Free Estimate</a>
-                <a href="tel:713-555-1234" class="bg-transparent border-2 border-white hover:bg-white hover:text-primary text-white font-medium py-3 px-8 rounded btn-primary">
-                    <i class="fas fa-phone mr-2"></i> (713) 555-1234
+                <a href="tel:832-830-3626" class="bg-transparent border-2 border-white hover:bg-white hover:text-primary text-white font-medium py-3 px-8 rounded btn-primary">
+                    <i class="fas fa-phone mr-2"></i> (832) 830-3626
                 </a>
             </div>
         </div>
     </section>
 
-<!-- Services Section - Fixed with Dark Background -->
 <section id="services" class="py-16 parallax">
     <div class="container mx-auto px-4">
         <div class="text-center mb-12">
@@ -195,7 +366,6 @@
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Service 1 -->
             <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
                 <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Residential Painting" class="w-full h-64 object-cover">
                 <div class="p-6">
@@ -208,7 +378,6 @@
                 </div>
             </div>
             
-            <!-- Service 2 -->
             <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="250">
                 <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Commercial Painting" class="w-full h-64 object-cover">
                 <div class="p-6">
@@ -218,7 +387,6 @@
                 </div>
             </div>
             
-            <!-- Service 3 -->
             <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
                 <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2086&q=80" alt="Interior Painting" class="w-full h-64 object-cover">
                 <div class="p-6">
@@ -228,7 +396,6 @@
                 </div>
             </div>
             
-            <!-- Service 4 -->
             <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="350">
                 <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Exterior Painting" class="w-full h-64 object-cover">
                 <div class="p-6">
@@ -238,7 +405,6 @@
                 </div>
             </div>
             
-            <!-- Service 5 -->
             <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="400">
                 <img src="https://images.unsplash.com/photo-1556910638-9a2cc2841af4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Stucco Repair" class="w-full h-64 object-cover">
                 <div class="p-6">
@@ -248,7 +414,6 @@
                 </div>
             </div>
             
-            <!-- Service 6 -->
             <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="450">
                 <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Drywall Repair" class="w-full h-64 object-cover">
                 <div class="p-6">
@@ -264,12 +429,11 @@
         </div>
     </div>
 </section>
-    <!-- About Section -->
     <section id="about" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
             <div class="flex flex-col lg:flex-row items-center">
                 <div class="lg:w-1/2 mb-8 lg:mb-0 lg:pr-8" data-aos="fade-right">
-                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="About Our Team" class="rounded-lg shadow-md w-full">
+                    <img src="pinto.png" alt="About Our Team" class="rounded-lg shadow-md w-full">
                 </div>
                 <div class="lg:w-1/2" data-aos="fade-left">
                     <h2 class="text-3xl md:text-4xl font-bold mb-6 font-serif">Quality, Transparency, & Customer Care: The Refresh Painting Difference</h2>
@@ -317,8 +481,8 @@
                     
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="#contact" class="bg-secondary hover:bg-opacity-90 text-white font-medium py-3 px-8 rounded btn-primary text-center">FREE QUOTE</a>
-                        <a href="tel:713-555-1234" class="bg-primary hover:bg-opacity-90 text-white font-medium py-3 px-8 rounded btn-primary text-center">
-                            <i class="fas fa-phone mr-2"></i> (713) 555-1234
+                        <a href="tel:832-830-3626" class="bg-primary hover:bg-opacity-90 text-white font-medium py-3 px-8 rounded btn-primary text-center">
+                            <i class="fas fa-phone mr-2"></i> (832) 830-3626
                         </a>
                     </div>
                 </div>
@@ -326,7 +490,6 @@
         </div>
     </section>
 
-    <!-- Features Section -->
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
@@ -335,7 +498,6 @@
             </div>
             
             <div class="features-grid">
-                <!-- Feature 1 -->
                 <div class="bg-gray-50 p-8 rounded-lg text-center" data-aos="fade-up" data-aos-delay="200">
                     <div class="feature-icon">
                         <i class="fas fa-shield-alt"></i>
@@ -344,7 +506,6 @@
                     <p class="text-gray-600">Plus lifetime manufacturer warranty on materials</p>
                 </div>
                 
-                <!-- Feature 2 -->
                 <div class="bg-gray-50 p-8 rounded-lg text-center" data-aos="fade-up" data-aos-delay="250">
                     <div class="feature-icon">
                         <i class="fas fa-user-shield"></i>
@@ -353,7 +514,6 @@
                     <p class="text-gray-600">Only trusted, vetted painters in your home</p>
                 </div>
                 
-                <!-- Feature 3 -->
                 <div class="bg-gray-50 p-8 rounded-lg text-center" data-aos="fade-up" data-aos-delay="300">
                     <div class="feature-icon">
                         <i class="fas fa-comment-dots"></i>
@@ -362,7 +522,6 @@
                     <p class="text-gray-600">Stay informed at every step of the process</p>
                 </div>
                 
-                <!-- Feature 4 -->
                 <div class="bg-gray-50 p-8 rounded-lg text-center" data-aos="fade-up" data-aos-delay="350">
                     <div class="feature-icon">
                         <i class="fas fa-tags"></i>
@@ -374,61 +533,59 @@
         </div>
     </section>
 
-    <!-- Service Areas Section -->
-    <section class="py-16 bg-gray-100 parallax" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80');">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 font-serif text-white" data-aos="fade-up">Our Service Areas</h2>
-                <p class="text-lg text-white max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Proudly serving Houston and surrounding communities</p>
-                <div class="w-20 h-1 bg-secondary mx-auto mt-4" data-aos="fade-up" data-aos-delay="150"></div>
+    <section class="service-areas-section">
+        <div class="service-areas-section-content">
+            <div class="service-areas-header">
+                <h2 class="js-fade-in">Our Service Areas</h2>
+                <p class="js-fade-in">Proudly serving Houston and surrounding communities</p>
+                <div class="service-areas-divider js-fade-in"></div>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="service-area-card" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="text-xl font-bold mb-3 font-serif text-primary">Houston Area</h3>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-center"><i class="fas fa-map-marker-alt text-secondary mr-2"></i> Downtown Houston</li>
-                        <li class="flex items-center"><i class="fas fa-map-marker-alt text-secondary mr-2"></i> The Woodlands</li>
-                        <li class="flex items-center"><i class="fas fa-map-marker-alt text-secondary mr-2"></i> Sugar Land</li>
+            <div class="service-areas-grid">
+                <div class="service-area-card js-fade-in">
+                    <h3>Houston Area</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Downtown Houston</li>
+                        <li><i class="fas fa-map-marker-alt"></i> The Woodlands</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Sugar Land</li>
                     </ul>
                 </div>
                 
-                <div class="service-area-card" data-aos="fade-up" data-aos-delay="250">
-                    <h3 class="text-xl font-bold mb-3 font-serif text-primary">Northern Communities</h3>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-center"><i class="fas fa-map-marker-alt text-secondary mr-2"></i> Spring</li>
-                        <li class="flex items-center"><i class="fas fa-map-marker-alt text-secondary mr-2"></i> Conroe</li>
-                        <li class="flex items-center"><i class="fas fa-map-marker-alt text-secondary mr-2"></i> Kingwood</li>
+                <div class="service-area-card js-fade-in">
+                    <h3>Northern Communities</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Spring</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Conroe</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Kingwood</li>
                     </ul>
                 </div>
                 
-                <div class="service-area-card" data-aos="fade-up" data-aos-delay="300">
-                    <h3 class="text-xl font-bold mb-3 font-serif text-primary">Southern Communities</h3>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-center"><i class="fas fa-map-marker-alt text-secondary mr-2"></i> Pearland</li>
-                        <li class="flex items-center"><i class="fas fa-map-marker-alt text-secondary mr-2"></i> League City</li>
-                        <li class="flex items-center"><i class="fas fa-map-marker-alt text-secondary mr-2"></i> Friendswood</li>
+                <div class="service-area-card js-fade-in">
+                    <h3>Southern Communities</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Pearland</li>
+                        <li><i class="fas fa-map-marker-alt"></i> League City</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Friendswood</li>
                     </ul>
                 </div>
                 
-                <div class="service-area-card" data-aos="fade-up" data-aos-delay="350">
-                    <h3 class="text-xl font-bold mb-3 font-serif text-primary">Western Communities</h3>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-center"><i class="fas fa-map-marker-alt text-secondary mr-2"></i> Katy</li>
-                        <li class="flex items-center"><i class="fas fa-map-marker-alt text-secondary mr-2"></i> Cypress</li>
-                        <li class="flex items-center"><i class="fas fa-map-marker-alt text-secondary mr-2"></i> Richmond</li>
+                <div class="service-area-card js-fade-in">
+                    <h3>Western Communities</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Katy</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Cypress</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Richmond</li>
                     </ul>
                 </div>
             </div>
             
-            <div class="text-center mt-12" data-aos="fade-up">
-                <p class="text-white mb-4">Don't see your area listed? We likely still serve you!</p>
+            <div class="service-areas-cta">
+                <p class="js-fade-in">Don't see your area listed? We likely still serve you!</p>
                 <a href="#contact" class="bg-secondary hover:bg-opacity-90 text-white font-medium py-3 px-8 rounded btn-primary inline-block">Contact Us to Verify</a>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
     <section id="testimonials" class="py-16 bg-primary text-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
@@ -437,7 +594,7 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
+                
                 <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="flex items-center mb-4">
                         <div class="text-yellow-400 mr-2">
@@ -459,7 +616,6 @@
                     </div>
                 </div>
                 
-                <!-- Testimonial 2 -->
                 <div class="testimonial-card" data-aos="fade-up" data-aos-delay="250">
                     <div class="flex items-center mb-4">
                         <div class="text-yellow-400 mr-2">
@@ -481,7 +637,6 @@
                     </div>
                 </div>
                 
-                <!-- Testimonial 3 -->
                 <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="flex items-center mb-4">
                         <div class="text-yellow-400 mr-2">
@@ -506,21 +661,19 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="py-16 bg-secondary text-white parallax" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-6 font-serif" data-aos="fade-up">Ready to Transform Your Space?</h2>
             <p class="text-xl mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Your dream home is just a brushstroke away. Contact us today for a free, no-obligation estimate.</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
                 <a href="#contact" class="bg-white text-primary hover:bg-opacity-90 font-medium py-3 px-8 rounded btn-primary">Get Your Free Estimate</a>
-                <a href="tel:713-555-1234" class="bg-transparent border-2 border-white hover:bg-white hover:text-primary text-white font-medium py-3 px-8 rounded btn-primary">
-                    <i class="fas fa-phone mr-2"></i> (713) 555-1234
+                <a href="tel:832-830-3626" class="bg-transparent border-2 border-white hover:bg-white hover:text-primary text-white font-medium py-3 px-8 rounded btn-primary">
+                    <i class="fas fa-phone mr-2"></i> (832) 830-3626
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <div class="flex flex-col lg:flex-row">
@@ -535,7 +688,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-dark mb-1">Phone Number</h4>
-                                <p class="text-gray-600">(713) 555-1234</p>
+                                <p class="text-gray-600">(832) 830-3626</p>
                             </div>
                         </div>
                         
@@ -573,52 +726,50 @@
                 
                 <div class="lg:w-1/2" data-aos="fade-left">
                     <form
-    action="https://formspree.io/f/manjjjan"
-    class="bg-gray-50 p-6 rounded-lg shadow-md"
-    method="POST">
-    <div class="mb-4">
-        <label for="name" class="block text-gray-700 font-medium mb-2">Your Name *</label>
-        <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
-    </div>
+                        action="https://formspree.io/f/manjjjan"
+                        class="bg-gray-50 p-6 rounded-lg shadow-md"
+                        method="POST">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Your Name *</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                        </div>
 
-    <div class="mb-4">
-        <label for="email" class="block text-gray-700 font-medium mb-2">Email Address *</label>
-        <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
-    </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address *</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                        </div>
 
-    <div class="mb-4">
-        <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number *</label>
-        <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
-    </div>
+                        <div class="mb-4">
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                        </div>
 
-    <div class="mb-4">
-        <label for="service" class="block text-gray-700 font-medium mb-2">Service Interested In *</label>
-        <select id="service" name="service" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
-            <option value="">Select a service</option>
-            <option value="residential">Residential Painting</option>
-            <option value="commercial">Commercial Painting</option>
-            <option value="interior">Interior Painting</option>
-            <option value="exterior">Exterior Painting</option>
-            <option value="stucco">Stucco Repair</option>
-            <option value="drywall">Drywall Repair</option>
-            <option value="other">Other Services</option>
-        </select>
-    </div>
+                        <div class="mb-4">
+                            <label for="service" class="block text-gray-700 font-medium mb-2">Service Interested In *</label>
+                            <select id="service" name="service" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                                <option value="">Select a service</option>
+                                <option value="residential">Residential Painting</option>
+                                <option value="commercial">Commercial Painting</option>
+                                <option value="interior">Interior Painting</option>
+                                <option value="exterior">Exterior Painting</option>
+                                <option value="stucco">Stucco Repair</option>
+                                <option value="drywall">Drywall Repair</option>
+                                <option value="other">Other Services</option>
+                            </select>
+                        </div>
 
-    <div class="mb-4">
-        <label for="message" class="block text-gray-700 font-medium mb-2">Project Details *</label>
-        <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required></textarea>
-    </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Project Details *</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required></textarea>
+                        </div>
 
-    <button type="submit" class="w-full bg-secondary hover:bg-opacity-90 text-white font-medium py-3 px-4 rounded btn-primary">Request Free Estimate</button>
-</form>
-
+                        <button type="submit" class="w-full bg-secondary hover:bg-opacity-90 text-white font-medium py-3 px-4 rounded btn-primary">Request Free Estimate</button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-dark text-white py-12">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -659,7 +810,7 @@
                     <ul class="space-y-2 text-gray-400">
                         <li class="flex items-start">
                             <i class="fas fa-phone-alt mt-1 mr-3 text-secondary"></i>
-                            <span>(713) 555-1234</span>
+                            <span>(832) 830-3626</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-envelope mt-1 mr-3 text-secondary"></i>
@@ -674,35 +825,30 @@
             </div>
             
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
-                <p>&copy; 2023 Refresh Painting LLC. All Rights Reserved. | <a href="#" class="hover:text-white">Privacy Policy</a> | <a href="#" class="hover:text-white">Terms of Service</a></p>
+                <p>&copy; 2023 Refresh Painting LLC. All Rights Reserved. | <a href="#" class="hover:text-white">Privacy Policy</a> |
+                <a href="#" class="hover:text-white">Terms of Service</a></p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript Libraries -->
-    <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-    
-    <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
-    <!-- Custom JavaScript -->
     <script>
-        // Initialize AOS
+        // Initialize AOS (si lo sigues usando en otras secciones)
         AOS.init({
             duration: 800,
             easing: 'ease-in-out',
             once: true
         });
-        
+
         // Mobile menu toggle
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
         
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -720,7 +866,7 @@
                     });
                     
                     // Close mobile menu if open
-                    if (!mobileMenu.classList.contains('hidden')) {
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
                         mobileMenu.classList.add('hidden');
                     }
                 }
@@ -730,59 +876,68 @@
         // Navbar scroll effect
         window.addEventListener('scroll', function() {
             const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('nav-scroll');
-                nav.classList.remove('py-3');
-                nav.classList.add('py-2');
-            } else {
-                nav.classList.remove('nav-scroll');
-                nav.classList.remove('py-2');
-                nav.classList.add('py-3');
+            if (nav) {
+                if (window.scrollY > 50) {
+                    nav.classList.add('nav-scroll');
+                    nav.classList.remove('py-3');
+                    nav.classList.add('py-2');
+                } else {
+                    nav.classList.remove('nav-scroll');
+                    nav.classList.remove('py-2');
+                    nav.classList.add('py-3');
+                }
             }
         });
-        
-        // GSAP Animations
-        gsap.registerPlugin(ScrollTrigger);
-        
-        // Animate service cards on scroll
-        gsap.utils.toArray('.service-card').forEach((card, i) => {
-            gsap.from(card, {
-                scrollTrigger: {
-                    trigger: card,
-                    start: "top 80%",
-                    toggleActions: "play none none none"
-                },
-                y: 50,
-                opacity: 0,
-                duration: 0.8,
-                delay: i * 0.1
+
+        /* ========================================================= */
+        /* === JS NATIVO PARA ANIMACIONES DE SERVICE AREAS === */
+        /* ========================================================= */
+
+        // Parallax effect for Service Areas Section
+        const serviceAreasSection = document.querySelector('.service-areas-section');
+        if (serviceAreasSection) {
+            window.addEventListener('scroll', () => {
+                const scrollPosition = window.pageYOffset;
+                const sectionTop = serviceAreasSection.offsetTop;
+                const sectionHeight = serviceAreasSection.offsetHeight;
+                
+                // Calculate how much the background should move
+                // Adjust this multiplier for more or less parallax effect
+                const backgroundMove = (scrollPosition - sectionTop) * 0.3; 
+                
+                // Apply the transformation
+                serviceAreasSection.style.backgroundPositionY = `calc(50% + ${backgroundMove}px)`;
             });
-        });
-        
-        // Parallax effect for service areas and CTA sections
-        gsap.to(".parallax", {
-            scrollTrigger: {
-                trigger: ".parallax",
-                scrub: true
-            },
-            backgroundPosition: "50% 100px",
-            ease: "none"
-        });
-        
-        // Animate service area cards
-        gsap.utils.toArray('.service-area-card').forEach((card, i) => {
-            gsap.from(card, {
-                scrollTrigger: {
-                    trigger: card,
-                    start: "top 80%",
-                    toggleActions: "play none none none"
-                },
-                y: 30,
-                opacity: 0,
-                duration: 0.6,
-                delay: i * 0.1
+        }
+
+        // Fade-in animation for Service Areas content using IntersectionObserver
+        const fadeInElements = document.querySelectorAll('.service-areas-section .js-fade-in');
+
+        const observerOptions = {
+            root: null, // viewport as root
+            rootMargin: '0px',
+            threshold: 0.1 // Trigger when 10% of the element is visible
+        };
+
+        const observerCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // Stop observing once it's visible to prevent re-triggering
+                    observer.unobserve(entry.target); 
+                }
             });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+        fadeInElements.forEach((element, index) => {
+            // Apply different delays to elements as they become visible
+            // This can be done by setting a custom property or directly in JS
+            element.style.transitionDelay = `${index * 0.1}s`; 
+            observer.observe(element);
         });
+
     </script>
 </body>
 </html>
